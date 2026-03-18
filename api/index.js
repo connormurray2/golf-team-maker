@@ -9,8 +9,19 @@ const app = express();
 // SSL disabled for simplicity
 const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL;
 
+const cleanConnectionString = (() => {
+  if (!connectionString) return undefined;
+  try {
+    const url = new URL(connectionString);
+    url.searchParams.delete('sslmode');
+    return url.toString();
+  } catch {
+    return connectionString;
+  }
+})();
+
 const pool = new Pool({
-  connectionString,
+  connectionString: cleanConnectionString,
   ssl: connectionString ? { rejectUnauthorized: false } : false
 });
 
