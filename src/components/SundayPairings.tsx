@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Player, Pair, SundayGroup, SundayDragItem, SundayConfiguration, TEAM_COLORS } from '../types';
+import { Player, Pair, SundayGroup, SundayDragItem, SundayConfiguration } from '../types';
 import { fetchSavedConfigs, saveSavedConfig, deleteSavedConfig } from '../api';
 import PairCard from './PairCard';
 import SundayGroupBox from './SundayGroupBox';
