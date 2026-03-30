@@ -972,3 +972,235 @@ h1 {
     justify-content: flex-start;
   }
 }
+
+/* ==================== SUNDAY PAIRINGS ==================== */
+
+.sunday-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 30px;
+}
+
+.sunday-pool-section {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.sunday-pool-section h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.sunday-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.sunday-pool {
+  min-height: 100px;
+}
+
+.sunday-pool-empty {
+  text-align: center;
+  color: #999;
+  padding: 30px 10px;
+  font-style: italic;
+}
+
+.sunday-pair-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.sunday-pair-wrapper .swap-btn {
+  position: absolute;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+.sunday-pair-wrapper .swap-btn:nth-of-type(1) {
+  top: 8px;
+}
+
+.sunday-pair-wrapper .swap-btn:nth-of-type(2) {
+  top: 36px;
+}
+
+.sunday-pair-wrapper .swap-btn:hover {
+  background: #f0f0f0;
+}
+
+.sunday-groups-section {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.sunday-groups-section h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.sunday-groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Sunday Group Box */
+.sunday-group-box {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+  padding: 15px;
+  min-height: 180px;
+  transition: all 0.2s ease;
+}
+
+.sunday-group-box.drag-over {
+  background: #e3f2fd;
+  border-color: #2196f3;
+  border-style: solid;
+}
+
+.sunday-group-box.complete {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  border-style: solid;
+}
+
+.sunday-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sunday-group-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.sunday-group-count {
+  font-size: 0.85rem;
+  color: #666;
+  background: #e0e0e0;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.sunday-group-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sunday-empty-slot {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Pair Card */
+.pair-card {
+  background: white;
+  border-radius: 10px;
+  border-left: 5px solid #999;
+  padding: 10px 12px;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.pair-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pair-card:active {
+  cursor: grabbing;
+}
+
+.pair-team-label {
+  display: inline-block;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pair-players {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pair-player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pair-player-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Sunday Pairings empty state */
+.sunday-empty-state {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.sunday-empty-state h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.sunday-empty-state p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Sunday responsive */
+@media (max-width: 768px) {
+  .sunday-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sunday-groups-grid {
+    grid-template-columns: 1fr;
+  }
+}

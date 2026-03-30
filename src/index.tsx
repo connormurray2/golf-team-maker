@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import RankingsEditor from './components/RankingsEditor';
+import SundayPairings from './components/SundayPairings';
 import Navigation from './components/Navigation';
 import reportWebVitals from './reportWebVitals';
 
@@ -17,6 +18,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/rankings" element={<RankingsEditor />} />
+        <Route path="/sunday-pairings" element={<SundayPairings />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
