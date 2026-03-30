@@ -23,6 +23,12 @@ const Navigation: React.FC = () => {
           >
             Rankings Editor
           </Link>
+          <Link
+            to="/sunday-pairings"
+            className={`nav-link ${location.pathname === '/sunday-pairings' ? 'active' : ''}`}
+          >
+            Sunday Pairings
+          </Link>
         </div>
       </div>
     </nav>

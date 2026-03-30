@@ -627,6 +627,15 @@ function App() {
     setTeams(balancedTeams);
   };
 
+  const clearUnlockedPlayers = () => {
+    setTeams(prevTeams =>
+      prevTeams.map(team => ({
+        ...team,
+        players: team.players.filter(p => team.lockedPlayers.has(p.id))
+      }))
+    );
+  };
+
   const clearAllTeams = async () => {
     // Reset to default template instead of empty teams
     await loadDefaultTemplate();
@@ -892,6 +901,9 @@ function App() {
             </button>
             <button className="btn" onClick={balanceTeams}>
               ⚖️ Balance Teams
+            </button>
+            <button className="btn" onClick={clearUnlockedPlayers}>
+              Clear Unlocked
             </button>
             <button className="btn" onClick={clearAllTeams}>
               Clear All Teams
